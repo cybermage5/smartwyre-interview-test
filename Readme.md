@@ -24,3 +24,57 @@ The only specific 'rules' are:
 - The tests should all pass
 
 You are free to use any frameworks/NuGet packages that you see fit. You should plan to spend around 1 hour completing the exercise.
+
+## Solution
+
+### Features
+* Refactored RebateService: Follows the SOLID principles with a modular design.
+* Extensible Incentive Types: Easy to add new incentive types using the Strategy Pattern.
+* Unit Tests: Comprehensive test coverage for services and calculators using MSTest and Moq.
+
+### Set Up Dependencies
+1. Ensure the following dependencies are installed:
+
+- .NET 8.0 SDK
+- NuGet Packages:
+    * MSTest (MSTest.TestFramework, MSTest.TestAdapter)
+    * Moq
+
+2. Restore dependencies:
+```
+dotnet restore
+```
+
+### How to Run
+1. Navigate to the Runner Directory:
+```
+cd Smartwyre.DeveloperTest.Runner
+```
+2. Run the Program:
+```
+dotnet run
+```
+
+### How to Test
+1: Navigate to the Test Project
+```
+cd Smartwyre.DeveloperTest.Tests
+```
+2. Run All Tests:
+```
+dotnet test
+```
+
+### Adding a New Incentive Type
+
+To add a new incentive type:
+1. Create a New Calculator:
+- Place the implementation in Smartwyre.DeveloperTest/Services/IncentiveCalculators/.
+
+2. Register in Factory:
+- Update IncentiveCalculatorFactory.cs to include the new incentive type.
+
+3. Test the New Calculator:
+- Add tests in Smartwyre.DeveloperTest.Tests/Services/IncentiveCalculators/.
+
+
